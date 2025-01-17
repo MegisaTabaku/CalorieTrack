@@ -15,4 +15,3 @@ public class UserAccount {
     public boolean login(String username, String password) {
         return users.getOrDefault(username, "").equals(password);
     }
-}
