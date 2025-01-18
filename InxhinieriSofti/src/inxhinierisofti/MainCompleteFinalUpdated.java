@@ -14,7 +14,7 @@ public class MainCompleteFinalUpdated {
         System.out.println("Welcome to the Calories Tracker App!");
 
         while (true) {
-            System.out.println("1. Register\n2. Exit");
+            System.out.println("1. Register\n2. Login\n3. Exit");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -33,6 +33,20 @@ public class MainCompleteFinalUpdated {
                     break;
 
                 case 2:
+                    System.out.print("Enter username: ");
+                    username = scanner.nextLine();
+                    System.out.print("Enter password: ");
+                    password = scanner.nextLine();
+
+                    if (userAccountDb.login(username, password)) {
+                        System.out.println("Login successful! Welcome " + username);
+                        userDashboard(scanner, username);
+                    } else {
+                        System.out.println("Invalid username or password.");
+                    }
+                    break;
+
+                case 3:
                     System.out.println("Exiting...");
                     scanner.close();
                     return;
@@ -41,5 +55,10 @@ public class MainCompleteFinalUpdated {
                     System.out.println("Invalid choice. Try again.");
             }
         }
+    }
+
+    private static void userDashboard(Scanner scanner, String username) {
+        System.out.println("Welcome to your dashboard, " + username + "!");
+        System.out.println("Dashboard functionality will be implemented in future steps.");
     }
 }
