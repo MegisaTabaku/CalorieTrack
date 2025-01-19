@@ -22,7 +22,7 @@ public class UserAccountDatabase { //Krijon nje llogari te re perdoruesi duke sh
 
     public boolean login(String username, String password) {
         String query = "SELECT * FROM Users WHERE username = ? AND password = ?"; //Query per te verifikuar kredencialet ne tabelen "Users"
-        try (Connection connection = SQLiteManager.getConnection(); // Krijojme nje lidhje me bazen e te dhenave dhe pergatisim deklaraten
+        try (Connection connection = SQLiteManager.getConnection(); // Krijojme nje lidhje data base dhe pergatisim deklaraten
              PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, username);   // Vendosim vlerat e "username" dhe "password" ne query
             stmt.setString(2, password);
