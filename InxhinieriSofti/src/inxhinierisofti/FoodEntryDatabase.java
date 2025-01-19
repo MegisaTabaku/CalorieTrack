@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 package inxhinierisofti;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-=======
+
 package InxhinieriSofti.src.inxhinierisofti;
 
 import java.sql.Connection;
@@ -12,12 +12,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
->>>>>>> rebeka2
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class FoodEntryDatabase {
-<<<<<<< HEAD
+
     public List<FoodEntry> getAllFoodEntries() {
         List<FoodEntry> foodEntries = new ArrayList<>();
         String query = "SELECT * FROM FoodEntries";
@@ -32,7 +32,7 @@ public class FoodEntryDatabase {
                         rs.getString("food_name"),
                         rs.getInt("calorie_value"),
                         rs.getDouble("price")
-=======
+
 
 
     public void addFoodEntry(FoodEntry entry, int userId) {
@@ -60,8 +60,7 @@ public class FoodEntryDatabase {
             stmt.setInt(1, userId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                foodEntries.add(new FoodEntry(null, query, userId, userId
->>>>>>> rebeka2
+
                 ));
             }
         } catch (SQLException e) {
@@ -69,12 +68,11 @@ public class FoodEntryDatabase {
         }
         return foodEntries;
     }
-<<<<<<< HEAD
-=======
+
 
     public int getCalorieValue() {
         // TODO Auto-generated method stub
         return 0;
     }
->>>>>>> rebeka2
+
 }
